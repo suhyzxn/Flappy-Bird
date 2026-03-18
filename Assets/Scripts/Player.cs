@@ -13,7 +13,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rigid.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Pillar")
+        {
+            rigid.AddForce(new Vector2(-5, 5), ForceMode2D.Impulse);
+            transform.Rotate(0, 0, 150);
+        }
+        GameManager.instance.Die();
     }
 }
