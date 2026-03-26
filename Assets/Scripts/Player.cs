@@ -4,9 +4,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float jumpForce;
     Rigidbody2D rigid;
+    AudioSource audioSource;
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -14,6 +16,8 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if (rigid.bodyType != RigidbodyType2D.Kinematic)
+                audioSource.Play();
         }
     }
 

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI EndScore;
     [SerializeField] TextMeshProUGUI HighScore;
     int Int_HighScore;
+    AudioSource audioSource;
 
     void Awake()
     {
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         Time.timeScale = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        audioSource.Play();
         playerRigid.bodyType = RigidbodyType2D.Kinematic;
         Invoke("GameOver", 1f);
     }
