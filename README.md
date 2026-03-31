@@ -1,5 +1,9 @@
 # Flappy-Bird
 
-Tap to jump
+Left Mouse Click: Jump
 
-Do not bump into the pillars
+Difficulty increases every 10 points
+
+Maximum difficulty at 50 points
+
+Pass through the pillars to break your high score!
