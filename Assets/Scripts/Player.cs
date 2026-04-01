@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!GameManager.instance.OptionObj.activeSelf && Input.GetMouseButtonDown(0))
         {
             rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             if (rigid.bodyType != RigidbodyType2D.Kinematic)

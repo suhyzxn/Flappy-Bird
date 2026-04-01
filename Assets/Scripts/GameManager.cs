@@ -4,17 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI ScoreText;
     public int score = -1;
     public static GameManager instance;
-    [SerializeField] GameObject ScoreObj;
+    
     [SerializeField] GameObject StartScreen;
     [SerializeField] GameObject GameOverPanel;
     [SerializeField] Rigidbody2D playerRigid;
+
+    [SerializeField] GameObject ScoreObj;
+    [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] TextMeshProUGUI EndScore;
     [SerializeField] TextMeshProUGUI HighScore;
     [SerializeField] GameObject levelupObj;
     [SerializeField] TextMeshProUGUI levelupText;
+
+    public GameObject OptionObj;
     int Int_HighScore;
     AudioSource audioSource;
 
@@ -37,6 +41,16 @@ public class GameManager : MonoBehaviour
         if (score == -1 && Input.GetMouseButtonDown(0))
         {
             GameStart();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            OptionObj.SetActive(!OptionObj.activeSelf);
+            if (!OptionObj.activeSelf)
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 
@@ -107,5 +121,16 @@ public class GameManager : MonoBehaviour
     void GetScore()
     {
         Int_HighScore = PlayerPrefs.GetInt("HighScore");
+    }
+
+    public void Back()
+    {
+        OptionObj.SetActive(!OptionObj.activeSelf);
+        Time.timeScale = 1;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
