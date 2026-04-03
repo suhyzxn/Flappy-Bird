@@ -38,19 +38,23 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (score == -1 && Input.GetMouseButtonDown(0))
+        if (score == -1)
         {
-            GameStart();
+            if (Input.GetMouseButtonDown(0))
+                GameStart();
+            else if (Input.anyKeyDown)
+                return;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
             OptionObj.SetActive(!OptionObj.activeSelf);
-            if (!OptionObj.activeSelf)
-            {
-                Time.timeScale = 1;
-            }
+        }
+
+        if (!OptionObj.activeSelf && Input.GetMouseButtonDown(0))
+        {
+            Time.timeScale = 1;
         }
     }
 
@@ -126,7 +130,6 @@ public class GameManager : MonoBehaviour
     public void Back()
     {
         OptionObj.SetActive(!OptionObj.activeSelf);
-        Time.timeScale = 1;
     }
 
     public void Quit()
