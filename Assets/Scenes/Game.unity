@@ -151,11 +151,11 @@ RectTransform:
   - {fileID: 2029821171}
   - {fileID: 1984891770}
   - {fileID: 1383428636}
-  m_Father: {fileID: 1441819207}
+  m_Father: {fileID: 1159585895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.7, y: 36.1}
+  m_AnchoredPosition: {x: -18.854626, y: 32.750267}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31513694
@@ -3623,54 +3623,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 687890230}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1154168182}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1789275053}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 31513694}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &783397018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4849,54 +4801,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 687890230}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1154168182}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1789275053}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 31513694}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1154168183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4976,12 +4880,14 @@ Transform:
   m_GameObject: {fileID: 1159585893}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1027.5547, y: 543.34973, z: 0}
+  m_LocalPosition: {x: 67.55469, y: 3.3497314, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1121909325}
-  m_Father: {fileID: 0}
+  - {fileID: 31513693}
+  - {fileID: 1789275052}
+  m_Father: {fileID: 1441819207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270704978
 GameObject:
@@ -5307,8 +5213,7 @@ RectTransform:
   - {fileID: 390492599}
   - {fileID: 687890229}
   - {fileID: 1154168181}
-  - {fileID: 31513693}
-  - {fileID: 1789275052}
+  - {fileID: 1159585895}
   m_Father: {fileID: 658969710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6492,11 +6397,11 @@ RectTransform:
   - {fileID: 546494957}
   - {fileID: 847137348}
   - {fileID: 696021070}
-  m_Father: {fileID: 1441819207}
+  m_Father: {fileID: 1159585895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.7, y: 122}
+  m_AnchoredPosition: {x: -18.854626, y: 118.65027}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789275053
@@ -7866,5 +7771,4 @@ SceneRoots:
   - {fileID: 817399782}
   - {fileID: 827386832}
   - {fileID: 1565983404}
-  - {fileID: 1159585895}
   - {fileID: 51139246}

@@ -10,13 +10,16 @@ public class AudioController : MonoBehaviour
     
     void Awake()
     {
-        GameObject[] controllers = GameObject.FindGameObjectsWithTag("Music");
-
-        if (controllers.Length > 1)
-            Destroy(gameObject);
-        else
-            DontDestroyOnLoad(this);
-
+        if (PlayerPrefs.HasKey("SFX"))
+        {
+            SFXSlider.value = PlayerPrefs.GetFloat("SFX");
+        }
+        
+        if (PlayerPrefs.HasKey("BGM"))
+        {
+            BGMSlider.value = PlayerPrefs.GetFloat("BGM");
+        }
+        
         SFXSlider.onValueChanged.AddListener(SetSFX);
         BGMSlider.onValueChanged.AddListener(SetBGM);
     }
@@ -24,10 +27,12 @@ public class AudioController : MonoBehaviour
     void SetSFX(float volume)
     {
         audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFX", volume);
     }
 
     void SetBGM(float volume)
     {
         audioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("BGM", volume);
     }
 }
