@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI HighScore;
     [SerializeField] GameObject levelupObj;
     [SerializeField] TextMeshProUGUI levelupText;
-
+    
+    public Countdown countdown;
     public GameObject OptionObj;
     int Int_HighScore;
     AudioSource audioSource;
@@ -50,11 +51,11 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             OptionObj.SetActive(!OptionObj.activeSelf);
-        }
-
-        if (!OptionObj.activeSelf && Input.GetMouseButtonDown(0))
-        {
-            Time.timeScale = 1;
+            if (!OptionObj.activeSelf)
+            {
+                countdown.gameObject.SetActive(true);
+                StartCoroutine(countdown.Count());
+            }
         }
     }
 
@@ -130,6 +131,8 @@ public class GameManager : MonoBehaviour
     public void Back()
     {
         OptionObj.SetActive(!OptionObj.activeSelf);
+        countdown.gameObject.SetActive(true);
+        StartCoroutine(countdown.Count());
     }
 
     public void Quit()
