@@ -35,4 +35,11 @@ public class AudioController : MonoBehaviour
         audioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("BGM", volume);
     }
+
+    public void OptionSound()
+    {
+        AudioSource optionSFX = GetComponent<AudioSource>();
+        AudioClip optionClip = optionSFX.clip;
+        optionSFX.PlayOneShot(optionClip);
+    }
 }

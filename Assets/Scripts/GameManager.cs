@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI HighScore;
     [SerializeField] GameObject levelupObj;
     [SerializeField] TextMeshProUGUI levelupText;
+    [SerializeField] AudioController audioController;
     
     public Countdown countdown;
     public GameObject OptionObj;
@@ -49,13 +50,20 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            OptionObj.SetActive(!OptionObj.activeSelf);
-            if (!OptionObj.activeSelf)
-            {
-                countdown.gameObject.SetActive(true);
-                StartCoroutine(countdown.Count());
-            }
+            Esc();
+        }
+    }
+
+    void Esc()
+    {
+        StopAllCoroutines();
+        Time.timeScale = 0;
+        OptionObj.SetActive(!OptionObj.activeSelf);
+        audioController.OptionSound();
+        if (!OptionObj.activeSelf)
+        {
+            countdown.gameObject.SetActive(true);
+            StartCoroutine(countdown.Count());
         }
     }
 
@@ -131,6 +139,7 @@ public class GameManager : MonoBehaviour
     public void Back()
     {
         OptionObj.SetActive(!OptionObj.activeSelf);
+        audioController.OptionSound();
         countdown.gameObject.SetActive(true);
         StartCoroutine(countdown.Count());
     }
